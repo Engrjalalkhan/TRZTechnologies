@@ -10,7 +10,7 @@ import {
   Animated,
   ScrollView,
 } from 'react-native';
-
+import Icon from 'react-native-vector-icons/FontAwesome'; // Choose your icon set
 const App = () => {
   const [isDropdownVisible, setDropdownVisible] = useState(false);
   const [fadeAnim] = useState(new Animated.Value(0)); // Initial opacity value for the fade animation
@@ -148,10 +148,10 @@ const App = () => {
               alignSelf: 'center',
               borderRadius: 7,
             }}
-
             onPress={() => navigation.navigate('About')}>
             <Text style={{color: 'white', alignSelf: 'center', padding: 5}}>
-              Read more{'>'}{'>'}
+              Read more{'>'}
+              {'>'}
             </Text>
           </TouchableOpacity>
         </View>
@@ -181,7 +181,8 @@ const App = () => {
             }}
             onPress={() => navigation.navigate('About')}>
             <Text style={{color: 'white', alignSelf: 'center', padding: 5}}>
-              Read more{'>'}{'>'}
+              Read more{'>'}
+              {'>'}
             </Text>
           </TouchableOpacity>
         </View>
@@ -210,9 +211,18 @@ const App = () => {
             }}
             onPress={() => navigation.navigate('About')}>
             <Text style={{color: 'white', alignSelf: 'center', padding: 5}}>
-              Read more{'>'}{'>'}
+              Read more{'>'}
+              {'>'}
             </Text>
           </TouchableOpacity>
+        </View>
+        <View>
+          <View
+            style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+            <Icon name="ellipsis-h" size={30} color="#000" />{' '}
+            {/* This will show an ellipsis icon */}
+            {/* <Text>:::</Text> */}
+          </View>
         </View>
       </ScrollView>
     </View>
@@ -246,7 +256,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     marginBottom: 20, // Add space below the button
-    width:'10%',
+    width: '10%',
   },
   menuIcon: {
     backgroundColor: 'white',
@@ -265,7 +275,10 @@ const styles = StyleSheet.create({
     shadowRadius: 5,
     borderWidth: 0.5,
     elevation: 5, // For Android shadow
-    borderRadius: 10,
+    // borderRadius: 10,
+    borderTopRightRadius: 10,
+    borderBottomLeftRadius: 10,
+    borderBottomRightRadius: 10,
     paddingTop: 10,
     paddingBottom: 10,
     borderColor: 'lightgray',
