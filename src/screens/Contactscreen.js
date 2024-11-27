@@ -88,7 +88,7 @@ const Contactscreen = () => {
               source={require('../assets/images/paper.jpg')}
               style={styles.icon}
             />
-            <Text style={styles.ContactTitle}>ContactSection Us</Text>
+            <Text style={styles.ContactTitle}>Contact Us</Text>
           </View>
 
           <Text style={[styles.ContactText,{fontSize: 20}]}>Let’s Get in Touch</Text>
@@ -104,6 +104,7 @@ const Contactscreen = () => {
             Feel free to get in touch with us and we will be back in contact
             with you shortly.
           </Text>
+          
         </View>
 
         {/* Touchable Texts Below Footer */}

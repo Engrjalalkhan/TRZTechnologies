@@ -123,7 +123,7 @@ const QualityScreen = () => {
             <TouchableOpacity onPress={() => navigation.navigate('About')}>
               <Text style={styles.footerLink}>{'>   '}About Us</Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => navigation.navigate('Cotact')}>
+            <TouchableOpacity onPress={() => navigation.navigate('Contact')}>
               <Text style={styles.footerLink}>{'>   '}Contact Us</Text>
             </TouchableOpacity>
             <TouchableOpacity onPress={() => navigation.navigate('Projects')}>
