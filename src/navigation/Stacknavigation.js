@@ -6,6 +6,7 @@ import AboutUsScreen from '../screens/AboutUs';
 import Technology from '../screens/Technology';
 import QualityStatments from '../screens/QualityStatments';
 import SEO from '../screens/SEO';
+import Projects from '../screens/Projects';
 
 const Stack = createNativeStackNavigator();
 
@@ -18,6 +19,7 @@ const App = () => {
         <Stack.Screen name="Technology" component={Technology} />
         <Stack.Screen name="Quality" component={QualityStatments} />
         <Stack.Screen name="SEO" component={SEO} />
+        <Stack.Screen name="Projects" component={Projects} />
       </Stack.Navigator>
     </NavigationContainer>
   );

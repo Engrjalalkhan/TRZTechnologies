@@ -78,152 +78,44 @@ const Technology = () => {
               source={require('../assets/images/paper.jpg')}
               style={styles.icon}
             />
-            <Text style={styles.aboutUsTitle}>Technology</Text>
+            <Text style={styles.aboutUsTitle}>SEO</Text>
           </View>
-
-          <Text style={[styles.aboutUsText, {fontSize: 18}]}>
-            Technology Works When It Streamlines Development and Maximizes
-            Productivity & Quality
+          <Text style={[styles.aboutUsText, {fontWeight: 'bold'}]}>
+            Search Engine Optimization (SEO)
           </Text>
           <Text style={styles.aboutUsText}>
-            TRZ Technologies has always been about enabling both our people and
-            our applications/games to achieve their full potential. Over the
-            years, we have engineered a complete framework for application/game
-            development that exploits the strengths of industry standard
-            software and overcomes its inherent limitations with proprietary
-            tools and technologies.
-          </Text>
-          <Text style={styles.aboutUsText}>
-            The result is our own truly unique and advanced hybrid system that
-            facilitates the rapid development and deployment of high quality
-            applications/games across multiple platforms.
+            Today we are in a Digital World; everything is being digital thanks
+            to Internet. Internet is one of the best media for advertisement in
+            anyway. If you run small business or have big industry or you are
+            running your company website than you can promote your business
+            online to attract a lot of clients. A corporate website increases
+            visibility of your businesses. If your site is advertised on
+            Internet, it will certainly draw so many visitors in contrast to
+            other marketing options. As much as visitors visit the website its
+            visibility will augment accordingly. You can boost visitors on your
+            website with the help of promotion services by selecting a SEO
+            (Search engine optimization) Services Provider.
           </Text>
           <Text style={[styles.aboutUsText, {fontWeight: 'bold'}]}>
-            Agile Development: Scrum
+            Search Engine Marketing (SEM/PPC)
           </Text>
           <Text style={styles.aboutUsText}>
-            The Scrum process sets down a framework for organized agile
-            development. It enforces daily communication within the development
-            team and sets clear and manageable short-term goals. Every week to
-            two weeks, the team goes through a full development cycle to produce
-            testable subsets of the overall functional requirements. This
-            creates a continuous feedback loop, which allows the project to
-            adapt to changes, maintain the schedule and minimize risk.
-          </Text>
-          <Text style={[styles.aboutUsText, {fontWeight: 'bold'}]}>
-            .NET Expertise
-          </Text>
-          <Text style={styles.aboutUsText}>
-            TRZ Technologies has extensive experience with product and
-            application development using .NET technologies. Our experience
-            encompasses many domains including Repair & Maintenance, marketing
-            applications and customer service portals.
+            In a fast changing highly competitive world .marketers are working
+            untiringly to rank higher in the search engines, to put up their
+            brands by means of social media and to turn clicks into a dollar
+            sign. SEM (Search engine marketing) Services are at the forefront of
+            Internet marketing world. SEM (Search engine marketing) Services
+            have a proven record for getting businesses top search rankings and
+            considerably more traffic. SEM (Search engine marketing) Services
+            have done it for big brands like as well as smaller firms. SEM
+            (Search engine marketing) Services do this for their clients by
+            attaining top rankings for tremendously competitive keywords.
           </Text>
           <Text style={styles.aboutUsText}>
-            TRZ Technologies has trained developers who can help you with:
+            • Google Adwords Text Advertising
           </Text>
           <Text style={styles.aboutUsText}>
-            • Scalable web-based products and applications using HTML5/CSS as
-            well JQuery
-          </Text>
-          <Text style={styles.aboutUsText}>
-            • Web services using .NET framework
-          </Text>
-          <Text style={styles.aboutUsText}>
-            • Migrate legacy applications e.g. from ASP to ASP.NET
-          </Text>
-          <Text style={[styles.aboutUsText, {fontWeight: 'bold'}]}>
-            Enterprise Resource Planning
-          </Text>
-          <Text style={styles.aboutUsText}>
-            An ERP solution such as Oracle isn’t just the foundation of your
-            software technology infrastructure, it’s deeply intertwined with
-            your business. ERP’s financial tools allow companies to successfully
-            maintain financial information like that of the assets, accounts,
-            budgets and cash. ERP assists an organization in effectively
-            managing the internal and external factors affecting it, while
-            enhancing resource efficiency by eliminating time consuming
-            activities and repetitive tasks.
-          </Text>
-          <Text style={styles.aboutUsText}>
-            ERP also provides an important insight into organization’s materials
-            management. It successfully automates the process of buying
-            materials and maintaining them. There are modules track the
-            purchased supplies and also calculate how the materials should be
-            distributed. Moreover, you can effortlessly predict the demand of
-            the market based on the history, economic statistics and sales data.
-            This facilitates a company in their decision-making process for when
-            a product production and provides a powerful competitive advantage
-            by reducing “time to market” the products and/or services.
-          </Text>
-          <Text style={styles.aboutUsText}>
-            With our strong expertise in large global ERP implementations,
-            experts at TRZ Technologies can execute the process using the cross
-            functional knowledge of various market verticals. Our qualified
-            business analysts, software engineers, and subject matter experts
-            have prior experience of successful product implementations using a
-            variety of ERP systems and industry specific solutions.
-          </Text>
-          <Text style={[styles.aboutUsText, {fontWeight: 'bold'}]}>
-            Mobile Development
-          </Text>
-          <Text style={styles.aboutUsText}>
-            TRZ Technologies build high-performing mobile applications for
-            native iOS (iPhone, iPod Touch & iPad) and Android (HTC, Samsung,
-            etc.) coding as well as cross-platform (HTML5) development.
-          </Text>
-          <Text style={[styles.aboutUsText, {fontWeight: 'bold'}]}>
-            Hybrid Apps
-          </Text>
-          <Text style={styles.aboutUsText}>
-            For Hybrid App development TRZ Technologies is using React Native
-            framework. React Native is a prominent open-source project of
-            Facebook. It is ideal for developing mobile apps by using the
-            popular and fast-growing React library.
-          </Text>
-          <Text style={styles.aboutUsText}>
-            TRZ Technologies has transformed the mobile app development with
-            higher speed and performance.
-          </Text>
-          <Text style={styles.aboutUsText}>
-            React Native combines the best parts of native development with
-            React, a best-in-class JavaScript library for building user
-            interfaces.
-          </Text>
-          <Text style={styles.aboutUsText}>
-            In 2018, React Native had the 2nd highest number of contributors for
-            any repository in GitHub. Today, React Native is supported by
-            contributions from individuals and companies around the world
-            including Callstack, Expo, Infinite Red, Microsoft and Software
-            Mansion.
-          </Text>
-          <Text style={[styles.aboutUsText, {fontWeight: 'bold'}]}>
-            Native Development For Everyone
-          </Text>
-          <Text style={[styles.aboutUsText, {}]}>
-            React Native lets you create truly native apps and doesn’t
-            compromise your users’ experiences. It provides a core set of
-            platform agnostic native components like View, Text, and Image that
-            map directly to the platform’s native UI building blocks.
-          </Text>
-          <Text style={[styles.aboutUsText, {fontWeight: 'bold'}]}>
-            Fast Refresh
-          </Text>
-          <Text style={[styles.aboutUsText, {}]}>
-            See your changes as soon as you save. With the power of JavaScript,
-            React Native lets you iterate at lightning speed. No more waiting
-            for native builds to finish. Save, see, repeat.
-          </Text>
-          <Text style={[styles.aboutUsText, {fontWeight: 'bold'}]}>
-            Web Application Development
-          </Text>
-          <Text style={[styles.aboutUsText, {}]}>
-            From a feature packed marketing campaign, to a simple startup
-            solution, our team can build it. We have built large systems of
-            online and offline desktop and web applications connected to an
-            online server. The aim is to create a seamless user experience
-            across all platforms that accommodates the ease-of-use for all
-            stakeholders
+            • Google Display Advertising
           </Text>
         </View>
 
@@ -338,6 +230,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 10,
+    paddingTop: 10,
   },
   aboutUsText: {
     fontSize: 16,
