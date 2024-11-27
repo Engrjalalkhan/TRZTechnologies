@@ -1,9 +1,9 @@
 import React from 'react';
-import Homescreen from './src/screens/Homescreen';
+import AboutUsScreen from './src/screens/AboutUs';
 
 const App = () => {
   return (
-    <Homescreen/>
+    <AboutUsScreen/>
   );
 };
 

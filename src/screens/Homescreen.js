@@ -16,7 +16,7 @@ const App = () => {
   const [isDropdownVisible, setDropdownVisible] = useState(false);
   const [fadeAnim] = useState(new Animated.Value(0)); // Initial opacity value for the fade animation
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  
+
 
   // Image sources for the onboarding effect
   const images = [
@@ -342,7 +342,7 @@ menuContainer: {
   },
   navigation: {
     position: 'absolute',
-    top: '15%', // Center the buttons vertically
+    top: '13%', // Center the buttons vertically
     left: 0,
     right: 0,
     justifyContent: 'space-between',
