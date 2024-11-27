@@ -8,6 +8,7 @@ import QualityStatments from '../screens/QualityStatments';
 import SEO from '../screens/SEO';
 import Projects from '../screens/Projects';
 import Testimonails from '../screens/Testimonials';
+import Contactscreen from '../screens/Contactscreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -22,6 +23,7 @@ const App = () => {
         <Stack.Screen name="SEO" component={SEO} />
         <Stack.Screen name="Projects" component={Projects} />
         <Stack.Screen name="Testimonials" component={Testimonails} />
+        <Stack.Screen name="Contact" component={Contactscreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

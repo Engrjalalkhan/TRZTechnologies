@@ -11,7 +11,7 @@ import {
   Linking,
 } from 'react-native';
 import {useNavigation} from '@react-navigation/native';
-const AboutUsScreen = () => {
+const Projects = () => {
   const navigation = useNavigation();
   const [isDropdownVisible, setDropdownVisible] = useState(false);
 
@@ -226,7 +226,7 @@ const AboutUsScreen = () => {
   );
 };
 
-export default AboutUsScreen;
+export default Projects;
 
 const styles = StyleSheet.create({
   container: {

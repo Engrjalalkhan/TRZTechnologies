@@ -1,91 +1,43 @@
 /* eslint-disable react-native/no-inline-styles */
-import {useNavigation} from '@react-navigation/native';
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import {
   View,
   Image,
   Text,
   TouchableOpacity,
   StyleSheet,
-  Animated,
-  ScrollView,
   TextInput,
+  ScrollView,
+  Linking,
 } from 'react-native';
-import {Linking} from 'react-native'; // Add this at the top for handling clicks on icons.
-const Homescreen = () => {
+import {useNavigation} from '@react-navigation/native';
+const Contactscreen = () => {
   const navigation = useNavigation();
-
   const [isDropdownVisible, setDropdownVisible] = useState(false);
-  const [fadeAnim] = useState(new Animated.Value(0)); // Initial opacity value for the fade animation
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
-  // Image sources for the onboarding effect
-  const images = [
-    require('../assets/images/image1.jpg'),
-    require('../assets/images/image2.jpg'),
-  ];
 
   const toggleDropdown = () => {
     setDropdownVisible(!isDropdownVisible);
   };
 
-  // Automatically change images every 5 seconds
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImageIndex(prevIndex => (prevIndex + 1) % images.length);
-    }, 5000);
-
-    return () => clearInterval(interval); // Cleanup on component unmount
-  }, [images.length]);
-
-  // Fade-in and fade-out effect when changing the image
-  useEffect(() => {
-    Animated.sequence([
-      Animated.timing(fadeAnim, {
-        toValue: 0, // Fade out
-        duration: 500,
-        useNativeDriver: true,
-      }),
-      Animated.timing(fadeAnim, {
-        toValue: 1, // Fade in
-        duration: 1000,
-        useNativeDriver: true,
-      }),
-    ]).start();
-  }, [currentImageIndex, fadeAnim]); // Trigger animation when currentImageIndex changes
-
-  // Functions to handle image navigation
-  const goToNextImage = () => {
-    setCurrentImageIndex((currentImageIndex + 1) % images.length);
-  };
-
-  const goToPreviousImage = () => {
-    setCurrentImageIndex(
-      (currentImageIndex - 1 + images.length) % images.length,
-    );
-  };
-
   return (
     <View style={styles.container}>
-      {/* Logo Image */}
-      <ScrollView
-        contentContainerStyle={{flexGrow: 1}}
-        style={styles.scrollView}>
-        <Image
-          source={require('../assets/images/Logo.png')}
-          style={styles.logo}
-        />
+      <ScrollView contentContainerStyle={{flexGrow: 1}}>
+        {/* Header Section with Logo and Menu */}
+        <View style={styles.header}>
+          <Image
+            source={require('../assets/images/Logo.png')}
+            style={styles.logo}
+          />
+          <TouchableOpacity style={styles.menuButton} onPress={toggleDropdown}>
+            <View style={styles.menuIcon} />
+            <View style={styles.menuIcon} />
+            <View style={styles.menuIcon} />
+          </TouchableOpacity>
+        </View>
 
-        {/* Hamburger Menu Button on the Left */}
-        <TouchableOpacity style={styles.menuButton} onPress={toggleDropdown}>
-          <View style={styles.menuIcon} />
-          <View style={styles.menuIcon} />
-          <View style={styles.menuIcon} />
-        </TouchableOpacity>
-
-        {/* Dropdown Menu Container */}
+        {/* Dropdown Menu */}
         {isDropdownVisible && (
-          <Animated.View style={[styles.menuContainer, {zIndex: 1}]}>
+          <View style={styles.menuContainer}>
             <TouchableOpacity
               style={styles.dropdownItem}
               onPress={() => navigation.navigate('Home')}>
@@ -126,83 +78,33 @@ const Homescreen = () => {
               onPress={() => navigation.navigate('Contact')}>
               <Text style={styles.dropdownText}>Contact Us</Text>
             </TouchableOpacity>
-          </Animated.View>
+          </View>
         )}
 
-        {/* Fade-in Scrolling Images */}
-        <Animated.View style={[styles.imageContainer, {opacity: fadeAnim}]}>
-          <Image source={images[currentImageIndex]} style={styles.image} />
-        </Animated.View>
-
-        {/* Forward and Backward Navigation Buttons */}
-        <View style={styles.navigation}>
-          <TouchableOpacity
-            onPress={goToPreviousImage}
-            style={styles.navButton}>
-            <Text style={styles.navButtonText}>{'<'}</Text>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={goToNextImage} style={styles.navButton}>
-            <Text style={styles.navButtonText}>{'>'}</Text>
-          </TouchableOpacity>
-        </View>
-
         {/* About Us Section */}
-        <View style={styles.section}>
-          <Text style={styles.sectionTitle}>About Us</Text>
-          <Text style={styles.sectionText}>
-            Experienced Leadership That Cultivates Creative Innovation To
-            Achieve Excellence. TRZ Technologies is led by a team of industry
-            professionals, each of whom has spent the greater part of his or her
-            professional ...
-          </Text>
-          <TouchableOpacity
-            style={styles.readMoreButton}
-            onPress={() => navigation.navigate('About')}>
-            <Text style={styles.readMoreText}>
-              Read more{' >'}
-              {' >'}
-            </Text>
-          </TouchableOpacity>
-        </View>
+        <View style={styles.ContactSection}>
+          <View style={{flexDirection: 'row'}}>
+            <Image
+              source={require('../assets/images/paper.jpg')}
+              style={styles.icon}
+            />
+            <Text style={styles.ContactTitle}>ContactSection Us</Text>
+          </View>
 
-        {/* Technology Section */}
-        <View style={styles.section}>
-          <Text style={styles.sectionTitle}>Technology</Text>
-          <Text style={styles.sectionText}>
-            Technology Works When It Streamlines Development and Maximizes
-            Productivity & Quality. TRZ Technologies has always been about
-            enabling both our people and our applications/games to achieve their
-            full ...
+          <Text style={[styles.ContactText,{fontSize: 20}]}>Let’s Get in Touch</Text>
+          <Text style={styles.ContactText}>
+            If you are interested in speaking with TRZ Technologies about an
+            upcoming project, have a query about our services or even if you
+            just want to say Hi, there are a number of ways we can make that
+            happen. Filling out the form below would help us get the right
+            person in touch with you, or you could simply send us an email. It’s
+            totally your choice!
           </Text>
-          <TouchableOpacity
-            style={styles.readMoreButton}
-            onPress={() => navigation.navigate('Technology')}>
-            <Text style={styles.readMoreText}>
-              Read more{' >'}
-              {' >'}
-            </Text>
-          </TouchableOpacity>
-        </View>
-
-        {/* Quality Statement Section */}
-        <View style={styles.section}>
-          <Text style={styles.sectionTitle}>Quality Statement</Text>
-          <Text style={styles.sectionText}>
-            TRZ Technologies believes ‘A well trained motivated Employee results
-            in a high Customer Satisfaction through better Quality of services.’
-            Therefore, we provide our employees equal opportunities ...
+          <Text style={styles.ContactText}>
+            Feel free to get in touch with us and we will be back in contact
+            with you shortly.
           </Text>
-          <TouchableOpacity
-            style={styles.readMoreButton}
-            onPress={() => navigation.navigate('Quality')}>
-            <Text style={styles.readMoreText}>
-              Read more{' >'}
-              {' >'}
-            </Text>
-          </TouchableOpacity>
         </View>
-
-        {/* Footer */}
 
         {/* Touchable Texts Below Footer */}
         <View style={styles.footer}>
@@ -243,10 +145,6 @@ const Homescreen = () => {
             </TouchableOpacity>
             <TouchableOpacity onPress={() => navigation.navigate('Quality')}>
               <Text style={styles.footerLink}>{'>   '}Quality Statement</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-              onPress={() => navigation.navigate('Testimonials')}>
-              <Text style={styles.footerLink}>{'>   '}Testimonails</Text>
             </TouchableOpacity>
             <TouchableOpacity onPress={() => navigation.navigate('Projects')}>
               <Text style={styles.footerLink}>{'>   '}Projects</Text>
@@ -294,7 +192,7 @@ const Homescreen = () => {
   );
 };
 
-export default Homescreen;
+export default Contactscreen;
 
 const styles = StyleSheet.create({
   container: {
@@ -310,6 +208,22 @@ const styles = StyleSheet.create({
     resizeMode: 'contain',
     alignSelf: 'center',
     marginBottom: 20,
+  },
+  ContactSection: {
+    padding: 40,
+    borderBottomColor: 'gray',
+    borderBottomWidth: 1,
+  },
+  ContactTitle: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    marginBottom: 10,
+    paddingTop: 10,
+  },
+  ContactText: {
+    fontSize: 16,
+    marginBottom: 10,
+    textAlign: 'justify',
   },
   menuButton: {
     backgroundColor: 'black',
@@ -332,24 +246,32 @@ const styles = StyleSheet.create({
     width: 20,
     marginVertical: 2,
   },
-
   menuContainer: {
     position: 'absolute',
-    top: 140, // Adjust the top value as necessary to position the dropdown below the menu button
-    right: 20, // Align the dropdown menu to the right side
+    top: 140,
+    right: 20,
     backgroundColor: 'white',
     shadowColor: 'gray',
     shadowOffset: {width: 0, height: 2},
     shadowOpacity: 0.1,
     shadowRadius: 5,
     borderWidth: 0.5,
-    elevation: 5, // For Android shadow
+    elevation: 5,
     borderBottomRightRadius: 10,
     borderBottomLeftRadius: 10,
     borderTopLeftRadius: 10,
-    width: '40%', // Adjust width as necessary for the dropdown menu
+    width: '40%',
+    zIndex: 2, // Ensure it's above the overlay
   },
-
+  overlay: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    backgroundColor: 'rgba(0,0,0,0.5)', // Semi-transparent black
+    zIndex: 1, // Below the menu container but above other content
+  },
   dropdownItem: {
     padding: 10,
   },
@@ -390,32 +312,6 @@ const styles = StyleSheet.create({
   navButtonText: {
     color: 'white',
     fontSize: 50,
-  },
-  section: {
-    marginBottom: 20,
-  },
-  sectionTitle: {
-    fontSize: 30,
-    color: 'Darkgray',
-    paddingTop: 20,
-    textAlign: 'center',
-  },
-  sectionText: {
-    fontSize: 16,
-    padding: 10,
-    textAlign: 'justify',
-  },
-  readMoreButton: {
-    backgroundColor: 'black',
-    height: 30,
-    width: 120,
-    alignSelf: 'center',
-    borderRadius: 7,
-  },
-  readMoreText: {
-    color: 'white',
-    alignSelf: 'center',
-    padding: 5,
   },
   footer: {
     backgroundColor: '#000000', // Ink black background color
@@ -520,5 +416,10 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize: 14,
     textAlign: 'center',
+  },
+  icon: {
+    width: 50,
+    height: 50,
+    marginRight: 8,
   },
 });
