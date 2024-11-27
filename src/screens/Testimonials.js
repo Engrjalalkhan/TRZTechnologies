@@ -84,49 +84,104 @@ const Testimonails = () => {
         )}
 
         {/* About Us Section */}
-        <View style={styles.aboutUsSection}>
+        <View style={styles.TestimonailsSection}>
           <View style={{flexDirection: 'row'}}>
             <Image
               source={require('../assets/images/paper.jpg')}
               style={styles.icon}
             />
-            <Text style={styles.aboutUsTitle}>SEO</Text>
+            <Text style={styles.TestimonailsTitle}>Testimonials</Text>
           </View>
-          <Text style={[styles.aboutUsText, {fontWeight: 'bold'}]}>
-            Search Engine Optimization (SEO)
-          </Text>
-          <Text style={styles.aboutUsText}>
-            Today we are in a Digital World; everything is being digital thanks
-            to Internet. Internet is one of the best media for advertisement in
-            anyway. If you run small business or have big industry or you are
-            running your company website than you can promote your business
-            online to attract a lot of clients. A corporate website increases
-            visibility of your businesses. If your site is advertised on
-            Internet, it will certainly draw so many visitors in contrast to
-            other marketing options. As much as visitors visit the website its
-            visibility will augment accordingly. You can boost visitors on your
-            website with the help of promotion services by selecting a SEO
-            (Search engine optimization) Services Provider.
-          </Text>
-          <Text style={[styles.aboutUsText, {fontWeight: 'bold'}]}>
-            Search Engine Marketing (SEM/PPC)
-          </Text>
-          <Text style={styles.aboutUsText}>
-            In a fast changing highly competitive world .marketers are working
-            untiringly to rank higher in the search engines, to put up their
-            brands by means of social media and to turn clicks into a dollar
-            sign. SEM (Search engine marketing) Services are at the forefront of
-            Internet marketing world. SEM (Search engine marketing) Services
-            have a proven record for getting businesses top search rankings and
-            considerably more traffic. SEM (Search engine marketing) Services
-            have done it for big brands like as well as smaller firms. SEM
-            (Search engine marketing) Services do this for their clients by
-            attaining top rankings for tremendously competitive keywords.
-          </Text>
-          <Text style={styles.aboutUsText}>
-            • Google Adwords Text Advertising
-          </Text>
-          <Text style={styles.aboutUsText}>• Google Display Advertising</Text>
+          <View style={styles.cardContainer}>
+            <View style={styles.headerContainer}>
+              <Text style={styles.quoteSymbol}>“</Text>
+              <Text style={styles.titleText}>
+                Charles J. Neff (President – MedServ International, Inc.)
+              </Text>
+            </View>
+
+            <View style={styles.contentContainer}>
+              <Image
+                source={{
+                  uri: 'https://trztechnologies.com/wp-content/uploads/2016/03/Charles-150x150.jpg',
+                }} // Replace with your image URL
+                style={styles.profileImage}
+              />
+              <View style={styles.textContainer}>
+                <Text style={styles.yearText}>Year 2015:</Text>
+                <Text style={styles.bodyText}>
+                  You and the team are doing an excellent job managing our fixes
+                  and change requests. I cannot stress to you enough how much
+                  this affects the morale of my staff as we get this ready to
+                  launch. I am impressed with how you are embracing our change
+                  requests. Knowing you can find a solution to a logical problem
+                  allows us some additional free thinking to address our
+                  customers’ needs. Being able to drill down into the captured
+                  data is a testament to the database design.
+                </Text>
+              </View>
+            </View>
+          </View>
+          <View style={styles.cardContainer}>
+            <View style={styles.headerContainer}>
+              <Text style={styles.quoteSymbol}>“</Text>
+              <Text style={styles.titleText}>
+                Dr. Muhammad Arif Head of Department (Medical Oncology &
+                Hematology)
+              </Text>
+            </View>
+
+            <View style={styles.contentContainer}>
+              <Image
+                source={{
+                  uri: 'https://trztechnologies.com/wp-content/uploads/2016/03/dr555-360x278-150x150.jpg',
+                }} // Replace with your image URL
+                style={styles.profileImage}
+              />
+              <View style={styles.textContainer}>
+                <Text style={styles.bodyText}>
+                  I ask TRZ Technologies to develop an application which could
+                  tract the patient history and the treatment provided to them.
+                  I was amazed to see the application developed without much of
+                  my interaction. The team worked dedicated and provided me the
+                  application as per the decided schedule. The application is
+                  fulfilling my current needs and I am quite satisfied with the
+                  output. I would recommend this company as they are good both
+                  in development and their customer service is outstanding.
+                </Text>
+              </View>
+            </View>
+          </View>
+          <View style={styles.cardContainer}>
+            <View style={styles.headerContainer}>
+              <Text style={styles.quoteSymbol}>“</Text>
+              <Text style={styles.titleText}>
+                Charles J. Neff (Vice President – MedServ International, Inc.)
+              </Text>
+            </View>
+
+            <View style={styles.contentContainer}>
+              <Image
+                source={{
+                  uri: 'https://trztechnologies.com/wp-content/uploads/2016/03/CharlesNeff-150x150.png',
+                }} // Replace with your image URL
+                style={styles.profileImage}
+              />
+              <View style={styles.textContainer}>
+                <Text style={styles.yearText}>Year 2014:</Text>
+                <Text style={styles.bodyText}>
+                  Having worked with the companies principles several years ago
+                  I decided to come back to them for a new mission critical
+                  vertical integration project. The professionalism and
+                  attention to detail has resulted in TRZ Technologies meeting
+                  of all project milestones on time with very high quality
+                  deliverable. The team takes feedback seriously and works with
+                  the client to assure complete satisfaction. TRZ Technologies
+                  is highly recommended for your programming needs.
+                </Text>
+              </View>
+            </View>
+          </View>
         </View>
 
         {/* Touchable Texts Below Footer */}
@@ -232,21 +287,16 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     marginBottom: 20,
   },
-  aboutUsSection: {
+  TestimonailsSection: {
     padding: 40,
     borderBottomColor: 'gray',
     borderBottomWidth: 1,
   },
-  aboutUsTitle: {
+  TestimonailsTitle: {
     fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 10,
     paddingTop: 10,
-  },
-  aboutUsText: {
-    fontSize: 16,
-    marginBottom: 10,
-    textAlign: 'justify',
   },
   menuButton: {
     backgroundColor: 'black',
@@ -335,32 +385,6 @@ const styles = StyleSheet.create({
   navButtonText: {
     color: 'white',
     fontSize: 50,
-  },
-  section: {
-    marginBottom: 20,
-  },
-  sectionTitle: {
-    fontSize: 30,
-    color: 'Darkgray',
-    paddingTop: 20,
-    textAlign: 'center',
-  },
-  sectionText: {
-    fontSize: 16,
-    padding: 10,
-    textAlign: 'justify',
-  },
-  readMoreButton: {
-    backgroundColor: 'black',
-    height: 30,
-    width: 120,
-    alignSelf: 'center',
-    borderRadius: 7,
-  },
-  readMoreText: {
-    color: 'white',
-    alignSelf: 'center',
-    padding: 5,
   },
   footer: {
     backgroundColor: '#000000', // Ink black background color
@@ -470,5 +494,50 @@ const styles = StyleSheet.create({
     width: 50,
     height: 50,
     marginRight: 8,
+  },
+  cardContainer: {
+    padding: 15,
+    backgroundColor: '#f2f2f2',
+    borderRadius: 8,
+    margin: 15,
+  },
+  headerContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 10,
+  },
+  quoteSymbol: {
+    fontSize: 28,
+    color: 'gray',
+    marginRight: 8,
+  },
+  titleText: {
+    fontWeight: 'bold',
+    fontSize: 16,
+    color: 'black',
+    flexShrink: 1, // Makes the text wrap if too long
+  },
+  contentContainer: {
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+  },
+  profileImage: {
+    width: 80,
+    height: 80,
+    borderRadius: 40, // Makes it circular
+    marginRight: 15,
+  },
+  textContainer: {
+    flex: 1,
+  },
+  yearText: {
+    fontWeight: 'bold',
+    marginBottom: 5,
+    fontSize: 14,
+  },
+  bodyText: {
+    fontSize: 14,
+    lineHeight: 20,
+    color: '#333',
   },
 });

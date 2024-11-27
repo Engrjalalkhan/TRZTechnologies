@@ -11,11 +11,9 @@ import {
   Linking,
 } from 'react-native';
 import {useNavigation} from '@react-navigation/native';
-const Technology = () => {
+const SEO = () => {
   const navigation = useNavigation();
   const [isDropdownVisible, setDropdownVisible] = useState(false);
-
-  const items = ['First item', 'Second item', 'Third item'];
 
   const toggleDropdown = () => {
     setDropdownVisible(!isDropdownVisible);
@@ -84,18 +82,18 @@ const Technology = () => {
         )}
 
         {/* About Us Section */}
-        <View style={styles.aboutUsSection}>
+        <View style={styles.SEOSection}>
           <View style={{flexDirection: 'row'}}>
             <Image
               source={require('../assets/images/paper.jpg')}
               style={styles.icon}
             />
-            <Text style={styles.aboutUsTitle}>SEO</Text>
+            <Text style={styles.SEOTitle}>SEO</Text>
           </View>
-          <Text style={[styles.aboutUsText, {fontWeight: 'bold'}]}>
+          <Text style={[styles.SEOText, {fontWeight: 'bold'}]}>
             Search Engine Optimization (SEO)
           </Text>
-          <Text style={styles.aboutUsText}>
+          <Text style={styles.SEOText}>
             Today we are in a Digital World; everything is being digital thanks
             to Internet. Internet is one of the best media for advertisement in
             anyway. If you run small business or have big industry or you are
@@ -108,10 +106,10 @@ const Technology = () => {
             website with the help of promotion services by selecting a SEO
             (Search engine optimization) Services Provider.
           </Text>
-          <Text style={[styles.aboutUsText, {fontWeight: 'bold'}]}>
+          <Text style={[styles.SEOText, {fontWeight: 'bold'}]}>
             Search Engine Marketing (SEM/PPC)
           </Text>
-          <Text style={styles.aboutUsText}>
+          <Text style={styles.SEOText}>
             In a fast changing highly competitive world .marketers are working
             untiringly to rank higher in the search engines, to put up their
             brands by means of social media and to turn clicks into a dollar
@@ -123,10 +121,10 @@ const Technology = () => {
             (Search engine marketing) Services do this for their clients by
             attaining top rankings for tremendously competitive keywords.
           </Text>
-          <Text style={styles.aboutUsText}>
+          <Text style={styles.SEOText}>
             • Google Adwords Text Advertising
           </Text>
-          <Text style={styles.aboutUsText}>• Google Display Advertising</Text>
+          <Text style={styles.SEOText}>• Google Display Advertising</Text>
         </View>
 
         {/* Touchable Texts Below Footer */}
@@ -215,7 +213,7 @@ const Technology = () => {
   );
 };
 
-export default Technology;
+export default SEO;
 
 const styles = StyleSheet.create({
   container: {
@@ -232,18 +230,18 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     marginBottom: 20,
   },
-  aboutUsSection: {
+ SEOSection: {
     padding: 40,
     borderBottomColor: 'gray',
     borderBottomWidth: 1,
   },
-  aboutUsTitle: {
+  SEOTitle: {
     fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 10,
     paddingTop: 10,
   },
-  aboutUsText: {
+  SEOText: {
     fontSize: 16,
     marginBottom: 10,
     textAlign: 'justify',
@@ -335,32 +333,6 @@ const styles = StyleSheet.create({
   navButtonText: {
     color: 'white',
     fontSize: 50,
-  },
-  section: {
-    marginBottom: 20,
-  },
-  sectionTitle: {
-    fontSize: 30,
-    color: 'Darkgray',
-    paddingTop: 20,
-    textAlign: 'center',
-  },
-  sectionText: {
-    fontSize: 16,
-    padding: 10,
-    textAlign: 'justify',
-  },
-  readMoreButton: {
-    backgroundColor: 'black',
-    height: 30,
-    width: 120,
-    alignSelf: 'center',
-    borderRadius: 7,
-  },
-  readMoreText: {
-    color: 'white',
-    alignSelf: 'center',
-    padding: 5,
   },
   footer: {
     backgroundColor: '#000000', // Ink black background color

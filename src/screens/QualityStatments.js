@@ -82,29 +82,29 @@ const AboutUsScreen = () => {
         )}
 
         {/* About Us Section */}
-        <View style={styles.aboutUsSection}>
+        <View style={styles.QualitySection}>
           <View style={{flexDirection: 'row'}}>
             <Image
               source={require('../assets/images/paper.jpg')}
               style={styles.icon}
             />
-            <Text style={styles.aboutUsTitle}>Quality Statments</Text>
+            <Text style={styles.QualityTitle}>Quality Statments</Text>
           </View>
 
-          <Text style={styles.aboutUsText}>
+          <Text style={styles.QualityText}>
             TRZ Technologies believes ‘A well trained motivated Employee results
             in a high Customer Satisfaction through better Quality of services.’
             Therefore, we provide our employees equal opportunities in a
             friendly and competitive environment to develop their skills and
             improve the quality of their work
           </Text>
-          <Text style={styles.aboutUsText}>
+          <Text style={styles.QualityText}>
             We welcome and value employee feedback in all areas of work. We
             believe in fact based management that values all the employees on
             the basis of their performance and discourage all the racial and
             gender biasness.
           </Text>
-          <Text style={styles.aboutUsText}>
+          <Text style={styles.QualityText}>
             We believe that there is always a better way to do things. And our
             belief encourages us to find fresh and better ways and services to
             satisfy our customers at minimal costs.
@@ -214,17 +214,18 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     marginBottom: 20,
   },
-  aboutUsSection: {
+  QualitySection: {
     padding: 40,
     borderBottomColor: 'gray',
     borderBottomWidth: 1,
   },
-  aboutUsTitle: {
+  QualityTitle: {
     fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 10,
+    paddingTop:10,
   },
-  aboutUsText: {
+  QualityText: {
     fontSize: 16,
     marginBottom: 10,
     textAlign: 'justify',
@@ -316,32 +317,6 @@ const styles = StyleSheet.create({
   navButtonText: {
     color: 'white',
     fontSize: 50,
-  },
-  section: {
-    marginBottom: 20,
-  },
-  sectionTitle: {
-    fontSize: 30,
-    color: 'Darkgray',
-    paddingTop: 20,
-    textAlign: 'center',
-  },
-  sectionText: {
-    fontSize: 16,
-    padding: 10,
-    textAlign: 'justify',
-  },
-  readMoreButton: {
-    backgroundColor: 'black',
-    height: 30,
-    width: 120,
-    alignSelf: 'center',
-    borderRadius: 7,
-  },
-  readMoreText: {
-    color: 'white',
-    alignSelf: 'center',
-    padding: 5,
   },
   footer: {
     backgroundColor: '#000000', // Ink black background color

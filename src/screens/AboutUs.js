@@ -218,6 +218,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 10,
+    paddingTop:10
   },
   aboutUsText: {
     fontSize: 16,
@@ -311,32 +312,6 @@ const styles = StyleSheet.create({
   navButtonText: {
     color: 'white',
     fontSize: 50,
-  },
-  section: {
-    marginBottom: 20,
-  },
-  sectionTitle: {
-    fontSize: 30,
-    color: 'Darkgray',
-    paddingTop: 20,
-    textAlign: 'center',
-  },
-  sectionText: {
-    fontSize: 16,
-    padding: 10,
-    textAlign: 'justify',
-  },
-  readMoreButton: {
-    backgroundColor: 'black',
-    height: 30,
-    width: 120,
-    alignSelf: 'center',
-    borderRadius: 7,
-  },
-  readMoreText: {
-    color: 'white',
-    alignSelf: 'center',
-    padding: 5,
   },
   footer: {
     backgroundColor: '#000000', // Ink black background color

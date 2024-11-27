@@ -82,13 +82,13 @@ const AboutUsScreen = () => {
         )}
 
         {/* About Us Section */}
-        <View style={styles.aboutUsSection}>
+        <View style={styles.ProjectSection}>
           <View style={{flexDirection: 'row'}}>
             <Image
               source={require('../assets/images/paper.jpg')}
               style={styles.icon}
             />
-            <Text style={styles.aboutUsTitle}>Projects</Text>
+            <Text style={styles.ProjectTitle}>Projects</Text>
           </View>
           <Image
             style={{
@@ -101,7 +101,7 @@ const AboutUsScreen = () => {
               uri: 'http://trztechnologies.com/wp-content/uploads/2022/06/Screenshot-2022-06-07-at-2.29.31-PM.png',
             }}
           />
-          <Text style={styles.aboutUsText}>Repair and Maintenance System</Text>
+          <Text style={styles.ProjectText}>Repair and Maintenance System</Text>
           <Image
             style={{
               width: '110%',
@@ -113,7 +113,7 @@ const AboutUsScreen = () => {
               uri: 'http://trztechnologies.com/wp-content/uploads/2022/06/Screenshot-2022-06-07-at-2.52.08-AM.png',
             }}
           />
-          <Text style={styles.aboutUsText}>Social Media Platform</Text>
+          <Text style={styles.ProjectText}>Social Media Platform</Text>
           <Image
             style={{
               width: '110%',
@@ -125,7 +125,7 @@ const AboutUsScreen = () => {
               uri: 'http://trztechnologies.com/wp-content/uploads/2022/06/Screenshot-2022-06-07-at-3.30.38-AM.png',
             }}
           />
-          <Text style={styles.aboutUsText}>Mini ERP</Text>
+          <Text style={styles.ProjectText}>Mini ERP</Text>
           <Image
             style={{
               width: '110%',
@@ -137,7 +137,7 @@ const AboutUsScreen = () => {
               uri: 'http://trztechnologies.com/wp-content/uploads/2022/06/FBPSD.png',
             }}
           />
-          <Text style={styles.aboutUsText}>Social Media Banners</Text>
+          <Text style={styles.ProjectText}>Social Media Banners</Text>
         </View>
 
         {/* Touchable Texts Below Footer */}
@@ -243,18 +243,18 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     marginBottom: 20,
   },
-  aboutUsSection: {
+  ProjectSection: {
     padding: 40,
     borderBottomColor: 'gray',
     borderBottomWidth: 1,
   },
-  aboutUsTitle: {
+  ProjectTitle: {
     fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 10,
     paddingTop: 10,
   },
-  aboutUsText: {
+  ProjectText: {
     fontSize: 20,
     marginBottom: 10,
     textAlign: 'justify',
@@ -346,32 +346,6 @@ const styles = StyleSheet.create({
   navButtonText: {
     color: 'white',
     fontSize: 50,
-  },
-  section: {
-    marginBottom: 20,
-  },
-  sectionTitle: {
-    fontSize: 30,
-    color: 'Darkgray',
-    paddingTop: 20,
-    textAlign: 'center',
-  },
-  sectionText: {
-    fontSize: 16,
-    padding: 10,
-    textAlign: 'justify',
-  },
-  readMoreButton: {
-    backgroundColor: 'black',
-    height: 30,
-    width: 120,
-    alignSelf: 'center',
-    borderRadius: 7,
-  },
-  readMoreText: {
-    color: 'white',
-    alignSelf: 'center',
-    padding: 5,
   },
   footer: {
     backgroundColor: '#000000', // Ink black background color
