@@ -1,9 +1,9 @@
 import React from 'react';
-import AboutUsScreen from './src/screens/AboutUs';
+import Stacknavigation from './src/navigation/Stacknavigation';
 
 const App = () => {
   return (
-    <AboutUsScreen/>
+    <Stacknavigation/>
   );
 };
 
