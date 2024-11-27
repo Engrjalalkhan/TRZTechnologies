@@ -9,11 +9,14 @@ import {
   StyleSheet,
   Animated,
   ScrollView,
+  TextInput,
 } from 'react-native';
+import { Linking } from 'react-native'; // Add this at the top for handling clicks on icons.
 const App = () => {
   const [isDropdownVisible, setDropdownVisible] = useState(false);
   const [fadeAnim] = useState(new Animated.Value(0)); // Initial opacity value for the fade animation
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  
 
   // Image sources for the onboarding effect
   const images = [
@@ -25,7 +28,7 @@ const App = () => {
     setDropdownVisible(!isDropdownVisible);
   };
 
-  // Automatically change images every 3 seconds
+  // Automatically change images every 5 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex(prevIndex => (prevIndex + 1) % images.length);
@@ -64,7 +67,9 @@ const App = () => {
   return (
     <View style={styles.container}>
       {/* Logo Image */}
-      <ScrollView style={{flex:1}}>
+      <ScrollView
+        contentContainerStyle={{flexGrow: 1}}
+        style={styles.scrollView}>
         <Image
           source={require('../assets/images/Logo.png')}
           style={styles.logo}
@@ -90,7 +95,7 @@ const App = () => {
               <Text style={styles.dropdownText}>Technology</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.dropdownItem}>
-              <Text style={styles.dropdownText}>Quality Statment</Text>
+              <Text style={styles.dropdownText}>Quality Statement</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.dropdownItem}>
               <Text style={styles.dropdownText}>SEO</Text>
@@ -123,105 +128,138 @@ const App = () => {
             <Text style={styles.navButtonText}>{'>'}</Text>
           </TouchableOpacity>
         </View>
-        <View>
-          <Text
-            style={{
-              fontSize: 30,
-              color: 'Darkgray',
-              paddingTop: 20,
-              textAlign: 'center',
-            }}>
-            About Us
-          </Text>
-          <Text style={{fontSize: 16, padding: 10, textAlign: 'justify'}}>
+
+        {/* About Us Section */}
+        <View style={styles.section}>
+          <Text style={styles.sectionTitle}>About Us</Text>
+          <Text style={styles.sectionText}>
             Experienced Leadership That Cultivates Creative Innovation To
             Achieve Excellence. TRZ Technologies is led by a team of industry
             professionals, each of whom has spent the greater part of his or her
             professional ...
           </Text>
-          <TouchableOpacity
-            style={{
-              backgroundColor: 'black',
-              height: 30,
-              width: 120,
-              alignSelf: 'center',
-              borderRadius: 7,
-            }}>
-            <Text style={{color: 'white', alignSelf: 'center', padding: 5}}>
-              Read more{'>'}
-              {'>'}
+          <TouchableOpacity style={styles.readMoreButton}>
+            <Text style={styles.readMoreText}>
+              Read more{' >'}
+              {' >'}
             </Text>
           </TouchableOpacity>
         </View>
-        <View>
-          <Text
-            style={{
-              fontSize: 30,
-              color: 'Darkgray',
-              paddingTop: 20,
-              textAlign: 'center',
-            }}>
-            Technology
-          </Text>
-          <Text style={{fontSize: 16, padding: 10, textAlign: 'justify'}}>
+
+        {/* Technology Section */}
+        <View style={styles.section}>
+          <Text style={styles.sectionTitle}>Technology</Text>
+          <Text style={styles.sectionText}>
             Technology Works When It Streamlines Development and Maximizes
-            Productivity & Quality TRZ Technologies has always been about
+            Productivity & Quality. TRZ Technologies has always been about
             enabling both our people and our applications/games to achieve their
             full ...
           </Text>
-          <TouchableOpacity
-            style={{
-              backgroundColor: 'black',
-              height: 30,
-              width: 120,
-              alignSelf: 'center',
-              borderRadius: 7,
-            }}>
-            <Text style={{color: 'white', alignSelf: 'center', padding: 5}}>
-              Read more{'>'}
-              {'>'}
+          <TouchableOpacity style={styles.readMoreButton}>
+            <Text style={styles.readMoreText}>
+              Read more{' >'}
+              {' >'}
             </Text>
           </TouchableOpacity>
         </View>
-        <View>
-          <Text
-            style={{
-              fontSize: 30,
-              color: 'Darkgray',
-              paddingTop: 20,
-              textAlign: 'center',
-            }}>
-            Quality Statement
-          </Text>
-          <Text style={{fontSize: 16, padding: 10, textAlign: 'justify'}}>
+
+        {/* Quality Statement Section */}
+        <View style={styles.section}>
+          <Text style={styles.sectionTitle}>Quality Statement</Text>
+          <Text style={styles.sectionText}>
             TRZ Technologies believes ‘A well trained motivated Employee results
             in a high Customer Satisfaction through better Quality of services.’
             Therefore, we provide our employees equal opportunities ...
           </Text>
-          <TouchableOpacity
-            style={{
-              backgroundColor: 'black',
-              height: 30,
-              width: 120,
-              alignSelf: 'center',
-              borderRadius: 7,
-            }}>
-            <Text style={{color: 'white', alignSelf: 'center', padding: 5}}>
-              Read more{'>'}
-              {'>'}
+          <TouchableOpacity style={styles.readMoreButton}>
+            <Text style={styles.readMoreText}>
+              Read more{' >'}
+              {' >'}
             </Text>
           </TouchableOpacity>
         </View>
-          <View
-            style={{
-              backgroundColor: '#212122',
-              width: '100%',
-              padding: 10,
-              // marginTop:20,
-              // flexDirection: 'row',
-            }}>
-            <Text style={{color: 'white', fontSize: 30}}>:::</Text>
-            <Text style={{color: 'white', fontSize: 30}}>TRZ Technologies</Text>
+
+        {/* Footer */}
+
+        {/* Touchable Texts Below Footer */}
+        <View style={styles.footer}>
+          <View style={styles.footerSection}>
+            <View style={styles.footerHeader}>
+              <View style={styles.ellipse}>
+                <Text style={styles.ellipseText}>⋮⋮⋮⋮</Text>
+              </View>
+              <Text style={styles.footerTitle}>TRZ Technologies</Text>
+            </View>
+            <TouchableOpacity>
+              <Text style={styles.footerLink}>{'>   '}About Us</Text>
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Text style={styles.footerLink}>{'>   '}Contact Us</Text>
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Text style={styles.footerLink}>{'>   '}Projects</Text>
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Text style={styles.footerLink}>{'>   '}Testimonials</Text>
+            </TouchableOpacity>
+          </View>
+
+          <View style={styles.footerSection}>
+            <View style={styles.footerHeader}>
+              <View style={styles.ellipse}>
+                <Text style={styles.ellipseText}>⋮⋮⋮⋮</Text>
+              </View>
+              <Text style={styles.footerTitle}>Our Services</Text>
+            </View>
+            <TouchableOpacity>
+              <Text style={styles.footerLink}>{'>   '}SEO</Text>
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Text style={styles.footerLink}>{'>   '}Technology</Text>
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Text style={styles.footerLink}>{'>   '}Quality Statement</Text>
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Text style={styles.footerLink}>{'>   '}Projects</Text>
+            </TouchableOpacity>
+          </View>
+
+          <View style={styles.footerSearch}>
+            <Text style={styles.searchLabel}>Search for:</Text>
+            <View style={styles.searchContainer}>
+              <TextInput
+                style={styles.searchInput}
+                placeholder="Enter search query"
+              />
+              <TouchableOpacity style={styles.searchButton}>
+                <Text style={styles.searchButtonText}>Search</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+
+          <View style={styles.footerBottom}>
+            {/* Social Media Icons */}
+            <View style={styles.socialIcons}>
+              <TouchableOpacity
+                onPress={() => Linking.openURL('https://twitter.com')}>
+                <Image
+                  source={require('../assets/images/twitter.png')}
+                  style={styles.socialIcon}
+                />
+              </TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => Linking.openURL('https://facebook.com')}>
+                <Image
+                  source={require('../assets/images/facebook.jpg')}
+                  style={styles.socialIcon}
+                />
+              </TouchableOpacity>
+            </View>
+
+            {/* Copyright Text */}
+            <Text style={styles.copyright}>© 2024 TRZ Technologies</Text>
+          </View>
         </View>
       </ScrollView>
     </View>
@@ -234,18 +272,16 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: 'white', // White background for the whole screen
-    justifyContent: 'center', // Align items to the top
-    alignItems: 'flex-start', // Align items to the left side
-    paddingTop: 20, // Add some space from the top (status bar space)
-    // paddingLeft: 20, // Add some space from the left
-    position: 'absolute', // For zIndex positioning
+  },
+  scrollView: {
+    flex: 1,
   },
   logo: {
     width: 200,
     height: 100,
     resizeMode: 'contain',
     alignSelf: 'center',
-    marginBottom: 20, // Add some space between the logo and the menu button
+    marginBottom: 20,
   },
   menuButton: {
     backgroundColor: 'black',
@@ -254,7 +290,7 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     justifyContent: 'center',
     alignItems: 'center',
-    marginBottom: 20, // Add space below the button
+    marginBottom: 20,
     width: '10%',
     marginLeft: 10,
   },
@@ -266,7 +302,7 @@ const styles = StyleSheet.create({
   },
   menuContainer: {
     position: 'absolute',
-    top: 160, // Position dropdown below the menu button
+    top: 160,
     left: 10,
     backgroundColor: 'white',
     shadowColor: 'gray',
@@ -275,41 +311,30 @@ const styles = StyleSheet.create({
     shadowRadius: 5,
     borderWidth: 0.5,
     elevation: 5, // For Android shadow
-    // borderRadius: 10,
     borderTopRightRadius: 10,
-    borderBottomLeftRadius: 10,
-    borderBottomRightRadius: 10,
-    paddingTop: 10,
-    paddingBottom: 10,
-    borderColor: 'lightgray',
-    width: '100%', // Set a fixed width for the dropdown
+    borderTopLeftRadius: 10,
+    width: '40%',
   },
   dropdownItem: {
-    paddingVertical: 5,
-    paddingHorizontal: 30,
-    borderRadius: 5,
-    marginBottom: 3,
-    borderBottomColor: 'lightgray',
-    borderBottomWidth: 1,
+    padding: 10,
   },
   dropdownText: {
+    fontSize: 18,
     color: 'black',
-    fontSize: 16,
   },
   imageContainer: {
     width: '100%',
-    height: 200, // Set a fixed height for the image container
-    marginTop: 10,
-    position: 'relative', // Make sure it's positioned relative for the nav buttons to align properly
+    height: 250,
+    marginBottom: 20,
   },
   image: {
-    width: '100%', // Make the image take up the full width of the container
-    height: '100%', // Make the image take up the full height of the container
-    resizeMode: 'cover',
+    width: '100%',
+    height: '100%',
+    borderRadius: 10,
   },
   navigation: {
     position: 'absolute',
-    top: '25%', // Center the buttons vertically
+    top: '15%', // Center the buttons vertically
     left: 0,
     right: 0,
     justifyContent: 'space-between',
@@ -323,12 +348,142 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     paddingHorizontal: 15,
     borderRadius: 5,
-
     // borderColor: 'white', // Optional: if you want a border to show the button outline
-    // borderWidth: 2, // Optional: for a border around the button
+    // borderWidth: 2, // Opti
   },
   navButtonText: {
     color: 'white',
     fontSize: 50,
   },
+  section: {
+    marginBottom: 20,
+  },
+  sectionTitle: {
+    fontSize: 30,
+    color: 'Darkgray',
+    paddingTop: 20,
+    textAlign: 'center',
+  },
+  sectionText: {
+    fontSize: 16,
+    padding: 10,
+    textAlign: 'justify',
+  },
+  readMoreButton: {
+    backgroundColor: 'black',
+    height: 30,
+    width: 120,
+    alignSelf: 'center',
+    borderRadius: 7,
+  },
+  readMoreText: {
+    color: 'white',
+    alignSelf: 'center',
+    padding: 5,
+  },
+  footer: {
+    backgroundColor: '#000000', // Ink black background color
+    padding: 20,
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+  },
+
+  footerSection: {
+    marginBottom: 20,
+  },
+
+  footerHeader: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 10,
+  },
+
+  ellipse: {
+    marginRight: 8, // Space between the ellipse and title
+  },
+
+  ellipseText: {
+    fontSize: 24,
+    color: 'white',
+  },
+
+  footerTitle: {
+    fontSize: 18,
+    color: 'white',
+    fontWeight: 'bold',
+  },
+
+  footerLink: {
+    color: '#cccccc',
+    fontSize: 16,
+    marginBottom: 5,
+    // textAlign:'center'
+  },
+
+  footerSearch: {
+    marginTop: 20,
+  },
+
+  searchLabel: {
+    color: 'white',
+    fontSize: 16,
+    marginBottom: 5,
+    textAlign: 'center',
+  },
+
+  searchContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+
+  searchInput: {
+    flex: 1,
+    height: 40,
+    borderColor: '#ccc',
+    borderWidth: 1,
+    borderRadius: 5,
+    paddingHorizontal: 10,
+    backgroundColor: 'white',
+  },
+
+  searchButton: {
+    backgroundColor: '#444',
+    paddingVertical: 10,
+    paddingHorizontal: 15,
+    marginLeft: 10,
+    borderRadius: 5,
+  },
+
+  searchButtonText: {
+    color: 'white',
+  },
+
+  footerBottom: {
+    alignItems: 'center',
+    marginTop: 20,
+  },
+
+  copyright: {
+    color: 'white',
+    fontSize: 14,
+  },
+  socialIcons: {
+  flexDirection: 'row',
+  justifyContent: 'center',
+  marginBottom: 10,
+},
+
+socialIcon: {
+  width: 30, // Adjust icon size as needed
+  height: 30,
+  marginHorizontal: 10, // Space between icons
+},
+
+// eslint-disable-next-line no-dupe-keys
+copyright: {
+  color: 'white',
+  fontSize: 14,
+  textAlign: 'center',
+},
+
 });
