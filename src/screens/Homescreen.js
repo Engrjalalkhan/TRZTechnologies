@@ -1,5 +1,5 @@
 /* eslint-disable react-native/no-inline-styles */
-/* eslint-disable no-undef */
+
 import React, {useState, useEffect} from 'react';
 import {
   View,
@@ -10,7 +10,6 @@ import {
   Animated,
   ScrollView,
 } from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome'; // Choose your icon set
 const App = () => {
   const [isDropdownVisible, setDropdownVisible] = useState(false);
   const [fadeAnim] = useState(new Animated.Value(0)); // Initial opacity value for the fade animation
@@ -65,7 +64,7 @@ const App = () => {
   return (
     <View style={styles.container}>
       {/* Logo Image */}
-      <ScrollView style={{flex: 1}}>
+      <ScrollView>
         <Image
           source={require('../assets/images/Logo.png')}
           style={styles.logo}
@@ -147,8 +146,7 @@ const App = () => {
               width: 120,
               alignSelf: 'center',
               borderRadius: 7,
-            }}
-            onPress={() => navigation.navigate('About')}>
+            }}>
             <Text style={{color: 'white', alignSelf: 'center', padding: 5}}>
               Read more{'>'}
               {'>'}
@@ -178,8 +176,7 @@ const App = () => {
               width: 120,
               alignSelf: 'center',
               borderRadius: 7,
-            }}
-            onPress={() => navigation.navigate('About')}>
+            }}>
             <Text style={{color: 'white', alignSelf: 'center', padding: 5}}>
               Read more{'>'}
               {'>'}
@@ -208,21 +205,23 @@ const App = () => {
               width: 120,
               alignSelf: 'center',
               borderRadius: 7,
-            }}
-            onPress={() => navigation.navigate('About')}>
+            }}>
             <Text style={{color: 'white', alignSelf: 'center', padding: 5}}>
               Read more{'>'}
               {'>'}
             </Text>
           </TouchableOpacity>
         </View>
-        <View>
           <View
-            style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-            <Icon name="ellipsis-h" size={30} color="#000" />{' '}
-            {/* This will show an ellipsis icon */}
-            {/* <Text>:::</Text> */}
-          </View>
+            style={{
+              backgroundColor: '#212122',
+              width: '100%',
+              // padding: 10,
+              // marginTop:20,
+              // flexDirection: 'row',
+            }}>
+            <Text style={{color: 'white', fontSize: 30}}>:::</Text>
+            <Text style={{color: 'white', fontSize: 30}}>TRZ Technologies</Text>
         </View>
       </ScrollView>
     </View>
@@ -235,11 +234,11 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: 'white', // White background for the whole screen
-    justifyContent: 'flex-start', // Align items to the top
+    justifyContent: 'center', // Align items to the top
     alignItems: 'flex-start', // Align items to the left side
     paddingTop: 20, // Add some space from the top (status bar space)
-    paddingLeft: 20, // Add some space from the left
-    position: 'relative', // For zIndex positioning
+    // paddingLeft: 20, // Add some space from the left
+    position: 'static', // For zIndex positioning
   },
   logo: {
     width: 200,
@@ -257,6 +256,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginBottom: 20, // Add space below the button
     width: '10%',
+    marginLeft: 10,
   },
   menuIcon: {
     backgroundColor: 'white',
@@ -267,7 +267,7 @@ const styles = StyleSheet.create({
   menuContainer: {
     position: 'absolute',
     top: 160, // Position dropdown below the menu button
-    left: 0,
+    left: 10,
     backgroundColor: 'white',
     shadowColor: 'gray',
     shadowOffset: {width: 0, height: 2},
@@ -282,7 +282,7 @@ const styles = StyleSheet.create({
     paddingTop: 10,
     paddingBottom: 10,
     borderColor: 'lightgray',
-    width: '95%', // Set a fixed width for the dropdown
+    width: '100%', // Set a fixed width for the dropdown
   },
   dropdownItem: {
     paddingVertical: 5,
@@ -297,7 +297,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   imageContainer: {
-    width: '95%',
+    width: '100%',
     height: 200, // Set a fixed height for the image container
     marginTop: 10,
     position: 'relative', // Make sure it's positioned relative for the nav buttons to align properly
@@ -310,7 +310,7 @@ const styles = StyleSheet.create({
   navigation: {
     position: 'absolute',
     top: '25%', // Center the buttons vertically
-    left: -10,
+    left: 0,
     right: 0,
     justifyContent: 'space-between',
     alignItems: 'center',
