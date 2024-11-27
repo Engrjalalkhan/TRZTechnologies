@@ -216,7 +216,7 @@ const App = () => {
             style={{
               backgroundColor: '#212122',
               width: '100%',
-              // padding: 10,
+              padding: 10,
               // marginTop:20,
               // flexDirection: 'row',
             }}>
@@ -238,7 +238,7 @@ const styles = StyleSheet.create({
     alignItems: 'flex-start', // Align items to the left side
     paddingTop: 20, // Add some space from the top (status bar space)
     // paddingLeft: 20, // Add some space from the left
-    position: 'static', // For zIndex positioning
+    position: 'absolute', // For zIndex positioning
   },
   logo: {
     width: 200,
