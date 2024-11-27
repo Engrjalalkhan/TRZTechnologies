@@ -284,37 +284,44 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   menuButton: {
-    backgroundColor: 'black',
-    paddingVertical: 10,
-    paddingHorizontal: 15,
-    borderRadius: 5,
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginBottom: 20,
-    width: '10%',
-    marginLeft: 10,
-  },
-  menuIcon: {
-    backgroundColor: 'white',
-    height: 3,
-    width: 20,
-    marginVertical: 2,
-  },
-  menuContainer: {
-    position: 'absolute',
-    top: 160,
-    left: 10,
-    backgroundColor: 'white',
-    shadowColor: 'gray',
-    shadowOffset: {width: 0, height: 2},
-    shadowOpacity: 0.1,
-    shadowRadius: 5,
-    borderWidth: 0.5,
-    elevation: 5, // For Android shadow
-    borderTopRightRadius: 10,
-    borderTopLeftRadius: 10,
-    width: '40%',
-  },
+  backgroundColor: 'black',
+  paddingVertical: 10,
+  paddingHorizontal: 15,
+  borderRadius: 5,
+  justifyContent: 'center',
+  alignItems: 'center',
+  marginBottom: 20,
+  width: '10%',
+  marginRight: 10, // Use marginRight instead of marginLeft for right-side alignment
+  position: 'absolute',
+  right: 10, // Position the menu button on the right side of the screen
+  top: 100, // Adjust the top value as necessary
+},
+
+menuIcon: {
+  backgroundColor: 'white',
+  height: 3,
+  width: 20,
+  marginVertical: 2,
+},
+
+menuContainer: {
+  position: 'absolute',
+  top: 140, // Adjust the top value as necessary to position the dropdown below the menu button
+  right: 20, // Align the dropdown menu to the right side
+  backgroundColor: 'white',
+  shadowColor: 'gray',
+  shadowOffset: {width: 0, height: 2},
+  shadowOpacity: 0.1,
+  shadowRadius: 5,
+  borderWidth: 0.5,
+  elevation: 5, // For Android shadow
+  borderBottomRightRadius:10,
+  borderBottomLeftRadius:10,
+  borderTopLeftRadius: 10,
+  width: '40%', // Adjust width as necessary for the dropdown menu
+},
+
   dropdownItem: {
     padding: 10,
   },
@@ -326,11 +333,12 @@ const styles = StyleSheet.create({
     width: '100%',
     height: 250,
     marginBottom: 20,
+    paddingTop:30,
   },
   image: {
     width: '100%',
     height: '100%',
-    borderRadius: 10,
+    // borderRadius: 10,
   },
   navigation: {
     position: 'absolute',
