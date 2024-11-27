@@ -64,7 +64,7 @@ const App = () => {
   return (
     <View style={styles.container}>
       {/* Logo Image */}
-      <ScrollView>
+      <ScrollView style={{flex:1}}>
         <Image
           source={require('../assets/images/Logo.png')}
           style={styles.logo}
