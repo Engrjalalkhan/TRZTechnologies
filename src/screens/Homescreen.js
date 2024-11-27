@@ -1,5 +1,5 @@
 /* eslint-disable react-native/no-inline-styles */
-import { useNavigation } from '@react-navigation/native';
+import {useNavigation} from '@react-navigation/native';
 import React, {useState, useEffect} from 'react';
 import {
   View,
@@ -13,7 +13,7 @@ import {
 } from 'react-native';
 import {Linking} from 'react-native'; // Add this at the top for handling clicks on icons.
 const App = () => {
-const navigation=useNavigation();
+  const navigation = useNavigation();
 
   const [isDropdownVisible, setDropdownVisible] = useState(false);
   const [fadeAnim] = useState(new Animated.Value(0)); // Initial opacity value for the fade animation
@@ -86,7 +86,9 @@ const navigation=useNavigation();
         {/* Dropdown Menu Container */}
         {isDropdownVisible && (
           <Animated.View style={[styles.menuContainer, {zIndex: 1}]}>
-            <TouchableOpacity style={styles.dropdownItem}>
+            <TouchableOpacity
+              style={styles.dropdownItem}
+              onPress={() => navigation.navigate('Home')}>
               <Text style={styles.dropdownText}>Home</Text>
             </TouchableOpacity>
             <TouchableOpacity
@@ -94,7 +96,9 @@ const navigation=useNavigation();
               onPress={() => navigation.navigate('About')}>
               <Text style={styles.dropdownText}>About Us</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.dropdownItem}>
+            <TouchableOpacity
+              style={styles.dropdownItem}
+              onPress={() => navigation.navigate('Technology')}>
               <Text style={styles.dropdownText}>Technology</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.dropdownItem}>
@@ -141,7 +145,9 @@ const navigation=useNavigation();
             professionals, each of whom has spent the greater part of his or her
             professional ...
           </Text>
-          <TouchableOpacity style={styles.readMoreButton}>
+          <TouchableOpacity
+            style={styles.readMoreButton}
+            onPress={() => navigation.navigate('About')}>
             <Text style={styles.readMoreText}>
               Read more{' >'}
               {' >'}
@@ -158,7 +164,9 @@ const navigation=useNavigation();
             enabling both our people and our applications/games to achieve their
             full ...
           </Text>
-          <TouchableOpacity style={styles.readMoreButton}>
+          <TouchableOpacity
+            style={styles.readMoreButton}
+            onPress={() => navigation.navigate('Technology')}>
             <Text style={styles.readMoreText}>
               Read more{' >'}
               {' >'}
