@@ -111,13 +111,19 @@ const App = () => {
               onPress={() => navigation.navigate('SEO')}>
               <Text style={styles.dropdownText}>SEO</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.dropdownItem} onPress={() => navigation.navigate('Projects')}>
+            <TouchableOpacity
+              style={styles.dropdownItem}
+              onPress={() => navigation.navigate('Projects')}>
               <Text style={styles.dropdownText}>Projects</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.dropdownItem} onPress={() => navigation.navigate('Testimonials')}>
+            <TouchableOpacity
+              style={styles.dropdownItem}
+              onPress={() => navigation.navigate('Testimonials')}>
               <Text style={styles.dropdownText}>Testimonials</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.dropdownItem} onPress={() => navigation.navigate('Contact')}>
+            <TouchableOpacity
+              style={styles.dropdownItem}
+              onPress={() => navigation.navigate('Contact')}>
               <Text style={styles.dropdownText}>Contact Us</Text>
             </TouchableOpacity>
           </Animated.View>
@@ -216,7 +222,8 @@ const App = () => {
             <TouchableOpacity onPress={() => navigation.navigate('Projects')}>
               <Text style={styles.footerLink}>{'>   '}Projects</Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => navigation.navigate('Testimonials')}>
+            <TouchableOpacity
+              onPress={() => navigation.navigate('Testimonials')}>
               <Text style={styles.footerLink}>{'>   '}Testimonials</Text>
             </TouchableOpacity>
           </View>
@@ -237,7 +244,8 @@ const App = () => {
             <TouchableOpacity onPress={() => navigation.navigate('Quality')}>
               <Text style={styles.footerLink}>{'>   '}Quality Statement</Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => navigation.navigate('Testimonials')}>
+            <TouchableOpacity
+              onPress={() => navigation.navigate('Testimonials')}>
               <Text style={styles.footerLink}>{'>   '}Testimonails</Text>
             </TouchableOpacity>
             <TouchableOpacity onPress={() => navigation.navigate('Projects')}>

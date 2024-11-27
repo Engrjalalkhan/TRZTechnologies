@@ -55,19 +55,27 @@ const AboutUsScreen = () => {
             </TouchableOpacity>
             <TouchableOpacity
               style={styles.dropdownItem}
-              onPress={() => navigation.navigate('Quality Statment')}>
+              onPress={() => navigation.navigate('Quality')}>
               <Text style={styles.dropdownText}>Quality Statement</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.dropdownItem}>
+            <TouchableOpacity
+              style={styles.dropdownItem}
+              onPress={() => navigation.navigate('SEO')}>
               <Text style={styles.dropdownText}>SEO</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.dropdownItem}>
+            <TouchableOpacity
+              style={styles.dropdownItem}
+              onPress={() => navigation.navigate('Projects')}>
               <Text style={styles.dropdownText}>Projects</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.dropdownItem}>
+            <TouchableOpacity
+              style={styles.dropdownItem}
+              onPress={() => navigation.navigate('Testimonials')}>
               <Text style={styles.dropdownText}>Testimonials</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.dropdownItem}>
+            <TouchableOpacity
+              style={styles.dropdownItem}
+              onPress={() => navigation.navigate('Contact')}>
               <Text style={styles.dropdownText}>Contact Us</Text>
             </TouchableOpacity>
           </View>
@@ -107,16 +115,17 @@ const AboutUsScreen = () => {
               </View>
               <Text style={styles.footerTitle}>TRZ Technologies</Text>
             </View>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate('About')}>
               <Text style={styles.footerLink}>{'>   '}About Us</Text>
             </TouchableOpacity>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate('Contact')}>
               <Text style={styles.footerLink}>{'>   '}Contact Us</Text>
             </TouchableOpacity>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate('Projects')}>
               <Text style={styles.footerLink}>{'>   '}Projects</Text>
             </TouchableOpacity>
-            <TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => navigation.navigate('Testimonials')}>
               <Text style={styles.footerLink}>{'>   '}Testimonials</Text>
             </TouchableOpacity>
           </View>
@@ -128,16 +137,16 @@ const AboutUsScreen = () => {
               </View>
               <Text style={styles.footerTitle}>Our Services</Text>
             </View>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate('SEO')}>
               <Text style={styles.footerLink}>{'>   '}SEO</Text>
             </TouchableOpacity>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate('Technology')}>
               <Text style={styles.footerLink}>{'>   '}Technology</Text>
             </TouchableOpacity>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate('Quality')}>
               <Text style={styles.footerLink}>{'>   '}Quality Statement</Text>
             </TouchableOpacity>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate('Projects')}>
               <Text style={styles.footerLink}>{'>   '}Projects</Text>
             </TouchableOpacity>
           </View>
